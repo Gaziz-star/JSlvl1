@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-2</title>
+</head>
+
+<body>
+    <!-- 1. -->
+    <script>
+        "use strict";
+        let a = 1;
+        let b = 1;
+        let c;
+        let d;
+
+        c = ++a;
+        alert(c);
+        //результат 2, потому что здесь префиксный инкремент, сначала к а прибавляется один, затем записывается в с
+
+        d = b++;
+        alert(d);
+        //результат 1, потому что здесь постфиксный инкремент, сначала b присваевается к d, лишь затем увеличивается на 1
+
+        c = (2 + ++a);
+        alert(c);
+        //результат 5, потому что значение а стало 2 в 20 строчке, теперь, в 28 строчке, после префиксного инкремента а становится 3
+
+        d = (2 + b++);
+        alert(d);
+        //результат 4, потому что значение b стало 2 в 24 строчке, теперь, в 32 строчке, после постфиксного инкремента сначала прибавляется прежнее занчение b
+
+        alert(a);
+        //3, потому что есть преобразования в 20 и в 28 строчках
+        alert(b);
+        //3, потому что есть преобразования в 24 и 32 строчках
+    </script>
+    <!-- 2. -->
+    <script>
+        "use strict"
+        let q = 2;
+        let x = 1 + (q *= 2);
+        alert(x);
+        //ответ 5, потому что сначала выполняется условие в скобках - (а *= 2 -> a*2, а = 4, 1+4=5)
+    </script>
+    <!-- 3.Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу: ... -->
+    <script>
+        "use strict"
+        let m = 6;
+        let n = -2;
+        let result = "";
+        if (m > 0 && n > 0) {
+            if (m > n)
+                result = m - n;
+            else {
+                result = n - m;
+            }
+            console.log("Разность этих цифр: " + result);
+        }
+        if (m < 0 && n < 0) {
+            result = m * n;
+            console.log("Произведение этих цифр: " + result);
+        }
+        if ((m >= 0 && n < 0) || (m < 0 && n >= 0)) {
+            result = m + n;
+            console.log("Сумма этих цифр: " + result);
+        }
+    </script>
+    <!-- 4.Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+ -->
+    <script>
+        "use strict"
+        let userNum = +prompt("Введите число от 1 до 15");
+        switch (userNum) {
+            case 1:
+                alert("Ваше число 1");
+                break;
+            case 2:
+                alert("Ваше число 2");
+                break;
+            case 3:
+                alert("Ваше число 3");
+                break;
+            case 4:
+                alert("Ваше число 4");
+                break;
+            case 5:
+                alert("Ваше число 5");
+                break;
+            case 6:
+                alert("Ваше число 6");
+                break;
+            case 7:
+                alert("Ваше число 7");
+                break;
+            case 8:
+                alert("Ваше число 8");
+                break;
+            case 9:
+                alert("Ваше число 9");
+                break;
+            case 10:
+                alert("Ваше число 10");
+                break;
+            case 11:
+                alert("Ваше число 11");
+                break;
+            case 12:
+                alert("Ваше число 12");
+                break;
+            case 13:
+                alert("Ваше число 13");
+                break;
+            case 14:
+                alert("Ваше число 14");
+                break;
+            case 15:
+                alert("Ваше число 15");
+                break;
+        }
+    </script>
+    <!-- 5.Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+ -->
+    <script>
+        "use strict"
+
+        function getSum(num1, num2) {
+            return num1 + num2;
+        }
+
+        function getMinus(num1, num2) {
+            return num1 - num2;
+        }
+
+        function multiply(num1, num2) {
+            return num1 * num2;
+        }
+
+        function divide(num1, num2) {
+            return num1 / num2;
+        }
+
+        let sum = getSum(5, 5);
+        let minus = getMinus(6, 9);
+        let getMultiply = multiply(4, 16);
+        let getDivide = divide(9, 3);
+
+        //6.Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return getSum(arg1, arg2);
+                    break;
+                case "-":
+                    return getMinus(arg1, arg2);
+                    break;
+                case "*":
+                    return multiply(arg1, arg2);
+                    break;
+                case "/":
+                    return divide(arg1, arg2);
+                    break;
+            }
+        }
+        let operation = mathOperation(6, 5, "*");
+    </script>
+</body>
+
+</html>
