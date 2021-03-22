@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-3</title>
+</head>
+
+<body>
+    <script>
+        let cart = [{
+            title: "\"Кока-кола\"",
+            count: 3,
+            price: 750
+        }, {
+            title: "\"Alpen Gold\"",
+            count: 7,
+            price: 390
+        }, {
+            title: "\"Snickers\"",
+            count: 19,
+            price: 250
+        }, {
+            title: "\"Шоколад \"Рахат\"\"",
+            count: 11,
+            price: 1190
+        }]
+
+        for (let item of cart) {
+            let totalPrice = item.count * item.price;
+            console.log(item.count + " товаров " + item.title + " будет стоить " + totalPrice + "тг");
+        }
+    </script>
+</body>
+
+</html>
