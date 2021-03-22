@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-3</title>
+</head>
+
+<body>
+
+    <!-- 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. -->
+    <script>
+        // alt+z, чтобы было удобнее читать коментарии (для vscode)
+        /*Для начала создаем массив nums с числами от 2 до 100 (причина, почему я сразу исключил единицу описана во 2-ом абзаце этой статьи: https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE#:~:text=2%2C%203%2C%205%2C%207,%D1%87%D0%B8%D1%81%D0%BB%D0%B0%20%D0%B1%D1%8B%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%8B%D0%BC%20%D0%BD%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%82%D0%BE%D0%B9.*/
+        let q = 1;
+        let nums = [];
+        while (q < 100) {
+            q++;
+            nums.push(q);
+        }
+
+        /*Теперь создаем цикл while, который будет перебирать все элементы массива. Цикл for будет проверять делится ли число из массива nums[i] на все числа до него, кроме 1 и самой себя. В моем цикле result выполняет роль индикатора. Если число nums[i] поделится на какое-нибудь число между 2 и самой себя хотя бы один раз, result перестанет быть нулём. Пока result остается нулем, это значит что число простое; как только он перестанет быть нулем, число будет считаться составным. Это я и проверяю на 33 строчке. */
+        i = 0;
+        while (i < nums.length) {
+            result = 0;
+            for (j = 2; j < nums[i]; j++) {
+                if (nums[i] % j == 0) {
+                    result += 1;
+                } else {
+                    continue;
+                }
+            }
+            if (result == 0) {
+                console.log(nums[i]);
+            }
+            i++;
+        }
+    </script>
+</body>
+
+</html>
